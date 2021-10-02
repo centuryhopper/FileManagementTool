@@ -1,10 +1,7 @@
 import os
 import shutil
-
 # code by Leo
 # inspired by this link: https://www.youtube.com/watch?v=KBjBPQExJLw&t=8s
-
-
 class FileUtils:
     @staticmethod
     def organizeFilesIntoFolders(path: str, extensionsToSkip: list[str] = [], onlyTargetTheseExtensions: list[str] = []):
@@ -35,6 +32,5 @@ class FileUtils:
                     f'{path}/{ext} does not exist, so making a directory for it now')
                 os.makedirs(f'{path}/{ext}')
             shutil.move(currentFilePath, destinationFilePath)
-
 
 FileUtils.organizeFilesIntoFolders('C:\\Users\\Leo Zhang\\Desktop\\testing', onlyTargetTheseExtensions=['.xlsx'])
