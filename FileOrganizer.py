@@ -4,7 +4,7 @@ import shutil
 # inspired by this link: https://www.youtube.com/watch?v=KBjBPQExJLw&t=8s
 class FileUtils:
     @staticmethod
-    def organizeFilesIntoFolders(path: str, extensionsToSkip: list[str] = [], onlyTargetTheseExtensions: list[str] = []):
+    def organizeFilesIntoFolders(path: str, extensionsToSkip = [], onlyTargetTheseExtensions = []):
         files = os.listdir(path)
         if not files:
             print('this path has no files')
@@ -33,4 +33,4 @@ class FileUtils:
                 os.makedirs(f'{path}/{ext}')
             shutil.move(currentFilePath, destinationFilePath)
 
-FileUtils.organizeFilesIntoFolders('C:\\Users\\Leo Zhang\\Desktop\\testing', onlyTargetTheseExtensions=['.xlsx'])
+FileUtils.organizeFilesIntoFolders('C:\\Users\\Leo Zhang\\Documents\\Youth_Leo_Pics\\photos_for_dating',)
