@@ -1,5 +1,6 @@
 import os
 import shutil
+from secrets import Secrets
 # code by Leo
 # inspired by this link: https://www.youtube.com/watch?v=KBjBPQExJLw&t=8s
 class FileUtils:
@@ -33,4 +34,6 @@ class FileUtils:
                 os.makedirs(f'{path}/{ext}')
             shutil.move(currentFilePath, destinationFilePath)
 
-FileUtils.organizeFilesIntoFolders('C:\\Users\\Leo Zhang\\Documents\\Youth_Leo_Pics\\photos_for_dating',)
+
+if Secrets.PATH_TO_ORGANIZE and os.path.exists(Secrets.PATH_TO_ORGANIZE):
+    FileUtils.organizeFilesIntoFolders(Secrets.PATH_TO_ORGANIZE)
